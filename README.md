@@ -1,4 +1,4 @@
-# XXX_pdf2qif.sh
+# postbank_pdf2qif.sh
 
 Dieses Repository enthält eine Sammlung von Skripten, mit deren Hilfe die Umsätze aus Kontoauszügen im PDF-Format im [QIF-Format](https://en.wikipedia.org/wiki/Quicken_Interchange_Format) extrahiert werden können.
 
@@ -23,13 +23,9 @@ Bei mir liegen sie unter `~/.local/bin`, ein Verzeichnis, das ich meiner `PATH`-
 Das Hauptskript `postbank_pdf2qif.sh` erwartet als Argument den Dateinamen eines Kontoauszugs im PDF-Format.
 Es erzeugt dann eine `.qif`-Datei gleichen Namens im gleichen Vezeichnis:
 
-```
-jan@fleur Konto % ls -1
-Kontoauszug_XXX.pdf
-jan@fleur Konto % postbank_pdf2qif.sh Kontoauszug_XXX.pdf
-jan@fleur Konto % ls -1
-Kontoauszug_XXX.pdf
-Kontoauszug_XXX.qif
+```shell
+for i in *.pdf; do postbank_pdf2qif.sh $i; done
+ls -l *.qif
 ```
 
 Die anderen Skripte lesen von `stdin` bzw. schreiben nach `stdout`.
@@ -47,17 +43,11 @@ Ich dokumentiere die Installation per [Homebrew](https://brew.sh/) für macOS, d
 ### `pdftotext`
 
 `pdftotext` ist der Text-Renderer der PDF-Rendering-Bibliothek [Poppler](https://poppler.freedesktop.org/).
-Diese Skripte funktionieren für mich mit folgender Version:
-
-```
-pdftotext version 25.02.0
-Copyright 2005-2025 The Poppler Developers - http://poppler.freedesktop.org
-Copyright 1996-2011, 2022 Glyph & Cog, LLC
-```
+Diese Skripte funktionieren für mich mit Version 25.02.0.
 
 Installation mit `brew`:
 
-```
+```shell
 brew install poppler
 ```
 
@@ -70,7 +60,7 @@ Ich verwende die Version, die mit dem macOS mitkommt, ich nehme an, die GNU-Vers
 
 Für die CSV-zu-QIF-Konvertierun habe ich ein kleines Python-Skript geschrieben.
 
-```
+```shell
 brew install python3.13
 ````
 
