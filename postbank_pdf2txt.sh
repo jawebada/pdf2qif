@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pdftotext -fixed 4 $1 -
+pdftotext -enc UTF-8 -layout -fixed 4 $1 -
