@@ -58,10 +58,11 @@ Ich verwende die Version, die mit dem macOS mitkommt, ich nehme an, die GNU-Vers
 
 ### Python3
 
-Für die CSV-zu-QIF-Konvertierun habe ich ein kleines Python-Skript geschrieben.
+Für die CSV-zu-QIF-Konvertierun habe ich ein kleines Python-Skript geschrieben, das ausschließlich Standard-Bibliotheken von Python3 verwendet.
+Python3 kann mit `brew` folgendermaßen installiert werden:
 
 ```shell
-brew install python3.13
+brew install python3
 ````
 
 ## Andere Kontoauszüge im PDF-Format
