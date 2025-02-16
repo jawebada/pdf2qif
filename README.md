@@ -47,6 +47,15 @@ Ich dokumentiere die Installation per [Homebrew](https://brew.sh/) für macOS, d
 ### `pdftotext`
 
 `pdftotext` ist der Text-Renderer der PDF-Rendering-Bibliothek [Poppler](https://poppler.freedesktop.org/).
+Diese Skripte funktionieren für mich mit folgender Version:
+
+```
+pdftotext version 25.02.0
+Copyright 2005-2025 The Poppler Developers - http://poppler.freedesktop.org
+Copyright 1996-2011, 2022 Glyph & Cog, LLC
+```
+
+Installation mit `brew`:
 
 ```
 brew install poppler
