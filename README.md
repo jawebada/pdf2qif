@@ -1,10 +1,11 @@
-# pdf2qif.sh
+# XXX_pdf2qif.sh
 
 Dieses Repository enthält eine Sammlung von Skripten, mit deren Hilfe die Umsätze aus Kontoauszügen im PDF-Format im [QIF-Format](https://en.wikipedia.org/wiki/Quicken_Interchange_Format) extrahiert werden können.
 
 Momentan werden Postbank-Kontoauszüge, wie die Postbank sie seit Mitte 2023 zur Verfügung stellt, unterstützt.
 
 Ich verwende diese Skripte, um die Postbank-Umsätze in [HomeBank](https://www.gethomebank.org) zu importieren.
+Ich habe damit alle Umsätze für 2024 importieren können.
 
 Das PDF-Format der Postbank ist ein "moving target", weswegen z. B. [FlatheadV8/Postbank_PDF2CSV](https://github.com/FlatheadV8/Postbank_PDF2CSV) nicht mehr funktioniert.
 Mal schauen, wie lange diese Version kompatibel bleibt.
@@ -16,8 +17,11 @@ Die AWK-Skripte zum Konvertieren in ein CSV-Format habe ich mir von ChatGPT schr
 
 ## Verwendung
 
+Es handelt sich um eine Sammlung von Skripten, die, sobald die Abhängigkeiten (s. u.) erfüllt sind, auf jedem Unix-Derivat (macOS, Linux etc.) verwendet werden können sollten.
+Bei mir liegen sie unter `~/.local/bin`, ein Verzeichnis, das ich meiner `PATH`-Variable hinzugefügt habe.
+
 Das Hauptskript `postbank_pdf2qif.sh` erwartet als Argument den Dateinamen eines Kontoauszugs im PDF-Format.
-Er erzeugt dann eine `.qif`-Datei gleichen Namens im gleichen Vezeichnis:
+Es erzeugt dann eine `.qif`-Datei gleichen Namens im gleichen Vezeichnis:
 
 ```
 jan@fleur Konto % ls -1
@@ -29,6 +33,7 @@ Kontoauszug_XXX.qif
 ```
 
 Die anderen Skripte lesen von `stdin` bzw. schreiben nach `stdout`.
+Sie können ggf. auch einzeln sinnvoll verwendet werden, insbesondere, wenn etwas nicht funktioniert wie erwartet.
 
 - `postbank_pdf2txt.sh` rendert das PDF als Text
 - `postbank_txt2table.awk` extrahiert die Tabelle der Umsätze
