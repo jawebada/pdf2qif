@@ -21,7 +21,8 @@ Es handelt sich um eine Sammlung von Skripten, die, sobald die Abhängigkeiten (
 Bei mir liegen sie unter `~/.local/bin`, ein Verzeichnis, das ich meiner `PATH`-Variable hinzugefügt habe.
 
 Das Hauptskript `postbank_pdf2qif.sh` erwartet als Argument den Dateinamen eines Kontoauszugs im PDF-Format.
-Es erzeugt dann eine `.qif`-Datei gleichen Namens im gleichen Vezeichnis:
+Es erzeugt dann eine `.qif`-Datei gleichen Namens im gleichen Vezeichnis.
+Folgendermaßen können z. B. die Umsätze für sämtliche Kontoauszüge in einem Verzeichnis extrahiert werden:
 
 ```shell
 for i in *.pdf; do postbank_pdf2qif.sh $i; done
